@@ -30,8 +30,8 @@ stage('Compiling and Running Test Cases') {
 }
 }
     environment {
-    SONAR_TOKEN = credentials('89f2f7b0a761f8b048a7101cbc55f102e18abc75')
-    SONAR_PROJECT_KEY = 'testing11_jenkins-sonar_testing
+    SONAR_TOKEN = '89f2f7b0a761f8b048a7101cbc55f102e18abc75'
+    SONAR_PROJECT_KEY = 'testing11_jenkins-sonar_testing'
   }
   
   stages {
