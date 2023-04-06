@@ -2,10 +2,10 @@ pipeline {
   agent any
 
   environment {
-    SONAR_TOKEN = credentials('sonar-token')
-    SONAR_PROJECT_KEY = 'my-project'
-  }
-  
+       SONAR_TOKEN = '89f2f7b0a761f8b048a7101cbc55f102e18abc75'
+       SONAR_PROJECT_KEY = 'testing11_jenkins-sonar_testing' 
+	 }
+ 
   stages {
     stage('Build') {
       steps {
@@ -16,7 +16,7 @@ pipeline {
     stage('SonarQube Scan') {
       steps {
         withSonarQubeEnv('SonarCloud') {
-          sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=testing11_jenkins-sonar_testing'
+          sh 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.login=$SONAR_TOKEN'
 	 }
       }
     }
