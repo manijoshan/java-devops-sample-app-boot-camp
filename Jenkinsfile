@@ -34,7 +34,6 @@ stage('Compiling and Running Test Cases') {
     SONAR_PROJECT_KEY = 'testing11_jenkins-sonar_testing'
   }
   
-  stages {
     stage('Build') {
       steps {
         sh 'mvn clean package'
