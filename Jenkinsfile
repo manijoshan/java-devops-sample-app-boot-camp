@@ -21,4 +21,18 @@ pipeline{
            sh 'mvn package'
          }
       }
+environment {
+       SONAR_TOKEN = '8e1bab6b2d917962c6585027caeb9bfec64df21e'
+       SONAR_PROJECT_KEY = 'manijoshan_java-devops-sample-app-boot-camp'
+	 }
+  
+    
+    
+    stage('SonarQube Scan') {
+      steps {
+        withSonarQubeEnv('SonarCloud') {
+          sh 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.login=$SONAR_TOKEN'
+	 }
+      }
+    }
 }}
