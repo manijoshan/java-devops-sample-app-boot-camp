@@ -4,7 +4,7 @@ pipeline{
    stage('Installing Maven'){
       steps {
           sh 'sudo apt-get update -y && sudo apt-get upgrade -y'
-	  sh 'sudo apt install default-jdk
+	  sh 'sudo apt install default-jdk -y'
           sh 'sudo apt-get install -y wget tree unzip maven'
            }
         }
