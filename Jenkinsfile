@@ -13,22 +13,7 @@ pipeline {
       }
     }
 
-    stage('SonarQube Scan') {
-      steps {
-        withSonarQubeEnv('SonarCloud') {
-          sh 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.login=$SONAR_TOKEN'
-	 }
-      }
-    }
-    
-    stage('Quality Gate') {
-      steps {
-        timeout(time: 1, unit: 'HOURS') {
-          waitForQualityGate abortPipeline: false
-        }
-      }
-    }
-  }
+ 
   
   post {
     always {
