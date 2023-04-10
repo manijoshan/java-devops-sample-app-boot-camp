@@ -1,5 +1,10 @@
 pipeline{
    agent any
+	environment {
+       SONAR_TOKEN = '8e1bab6b2d917962c6585027caeb9bfec64df21e'
+       SONAR_PROJECT_KEY = 'manijoshan_java-devops-sample-app-boot-camp'
+         }
+
    stages{
    stage('Installing Maven'){
       steps {
@@ -21,10 +26,6 @@ pipeline{
            sh 'mvn package'
          }
       }
-environment {
-       SONAR_TOKEN = '8e1bab6b2d917962c6585027caeb9bfec64df21e'
-       SONAR_PROJECT_KEY = 'manijoshan_java-devops-sample-app-boot-camp'
-	 }
   
     
     
