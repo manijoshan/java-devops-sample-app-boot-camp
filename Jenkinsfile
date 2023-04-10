@@ -21,19 +21,4 @@ pipeline{
            sh 'mvn test'
        }
     }
-    stage('creating Artifact') {
-       steps {
-           sh 'mvn package'
-         }
-      }
-  
-    
-    
-    stage('SonarQube Scan') {
-      steps {
-        withSonarQubeEnv('SonarCloud') {
-          sh 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.login=$SONAR_TOKEN'
-	 }
-      }
-    }
 }}
