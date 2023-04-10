@@ -21,11 +21,16 @@ pipeline{
            sh 'mvn test'
        }
     }
-   stage('SonarCloud Analysis') {
-  steps {
-    withSonarCloudEnv('sonarcloud') {
-      sh 'mvn clean verify sonar:sonar'
+    stage('Build') {
+      steps {
+        sh 'mvn clean package'
+      }
     }
-  }
-}
+    stage('SonarQube analysis') {
+      steps {
+        withSonarQubeEnv('SonarQube') {
+          sh 'mvn sonar:sonar'
+        }
+      }
+    }
 }}
