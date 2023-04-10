@@ -27,10 +27,10 @@
         <java.version>1.8</java.version>
 </properties>
 
-<properties>
+<!--<properties>
   <sonar.organization>testing11</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
+</properties>-->
 
     <dependencies>
 
