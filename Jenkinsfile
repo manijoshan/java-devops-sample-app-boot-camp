@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'agentfarm'}
+  agent any
 
   environment {
        SONAR_TOKEN = '8e1bab6b2d917962c6585027caeb9bfec64df21e'
