@@ -1,13 +1,13 @@
-pipeline {
+pipeline{
    agent any
-   stages {
-   stage('Installing Maven') {
+   stages{i
+   stage('Installing Maven'){
       steps {
           sh 'sudo apt-get update -y && sudo apt-get upgrade -y'
           sh 'sudo apt-get install -y wget tree unzip maven'
            }
         }
-     }
+     
     stage('Compiling and running test cases') {
        steps {
            sh 'mvn clean'
@@ -20,4 +20,4 @@ pipeline {
            sh 'mvn package'
          }
       }
-}
+}}
