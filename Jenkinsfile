@@ -2,8 +2,8 @@ pipeline {
   agent {label 'agentfarm'}
 
   environment {
-       SONAR_TOKEN = '89f2f7b0a761f8b048a7101cbc55f102e18abc75'
-       SONAR_PROJECT_KEY = 'testing11_jenkins-sonar_testing' 
+       SONAR_TOKEN = '8e1bab6b2d917962c6585027caeb9bfec64df21e'
+       SONAR_PROJECT_KEY = 'sonarqubereport' 
 	 }
  
   stages {
