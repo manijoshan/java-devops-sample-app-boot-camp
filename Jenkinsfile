@@ -8,14 +8,14 @@ pipeline{
            }
         }
      
-    stage('Compiling and running test cases') {
+    stage('Compiling and testing') {
        steps {
            sh 'mvn clean'
            sh 'mvn compile'
            sh 'mvn test'
        }
     }
-    stage('creating Package') {
+    stage('creating Artifact') {
        steps {
            sh 'mvn package'
          }
