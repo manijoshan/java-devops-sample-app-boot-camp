@@ -1,25 +1,22 @@
 pipeline {
-  agent any
-
-  environment {
-       SONAR_TOKEN = '8e1bab6b2d917962c6585027caeb9bfec64df21e'
-       SONAR_PROJECT_KEY = 'sonarqubereport' 
-	 }
- 
-  stages {
-    stage('Build') {
+   agent any
+   stages {
+   stage('Installing Maven') {
       steps {
-        sh 'mvn clean package'
+          sh 'sudo apt-get update -y && sudo apt-get upgrade -y'
+          sh 'sudo apt-get install -y wget tree unzip maven'
+           }
+        }
+     }
+    stage('Compiling and running test cases') {
+       steps {
+           sh 'mvn clean'
+           sh 'mvn compile'
+           sh 'mvn test'
+       }
+    }
+    stage('creating Package') {
+       steps {
+           sh 'mvn package'
+         }
       }
-    }
-
- 
-  
-  post {
-    always {
-      // Make sure to clean up any SonarCloud analysis data after the build
-      cleanWs()
-    }
-  }
-}
-}
