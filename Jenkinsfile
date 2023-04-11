@@ -23,7 +23,7 @@ pipeline{
       steps {
         withSonarQubeEnv('sonarqubeserver') {
          
-	 sh 'mvn sonar:sonar\ -Dsonar.projectKey=$SONAR_PROJECT_KEY\ -Dsonar.login=$SONAR_TOKEN'
+	 sh 'mvn sonar:sonar \ -Dsonar.projectKey=$SONAR_PROJECT_KEY \ -Dsonar.login=$SONAR_TOKEN'
         }
       }
     }
