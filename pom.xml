@@ -27,7 +27,11 @@
 	  <java.version>1.8</java.version>
 	 <sonar.projectKey>manijoshan_java-devops-sample-app-boot-camp</sonar.projectKey>
   	<sonar.organization>sonarqubereport</sonar.organization>
- 	 <sonar.host.url>https://sonarcloud.io/projects</sonar.host.url>
+ 	 <sonar.host.url>https://sonarcloud.io/projects<plugin>
+      <groupId>org.sonarsource.scanner.maven</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>3.9.0.2155</version>
+    </plugin></sonar.host.url>
  	 <sonar.login>8e1bab6b2d917962c6585027caeb9bfec64df21e</sonar.login>
 </properties>
 
@@ -92,11 +96,12 @@
 			</testResource>
 		</testResources>
 		<plugins>
-		<plugin>
+			<plugin>
      		 <groupId>org.sonarsource.scanner.maven</groupId>
-    		  <artifactId>sonar-maven-plugin</artifactId>
-     		 <version>3.7.0.1746</version>
-    </plugin>
+     		 <artifactId>sonar-maven-plugin</artifactId>
+      		<version>3.9.0.2155</version>
+  		  </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
