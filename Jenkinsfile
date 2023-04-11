@@ -17,7 +17,7 @@ pipeline {
                 sh '. /etc/profile.d/sonar-scanner.sh'
                 sh '/opt/sonar-scanner/bin/sonar-scanner --version'
 		sh 'ls'
-                sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=manijoshan_java-devops-sample-app-boot-camp -Dsonar.organization=sonarqubereport -Dsonar.sources=src/main/java/ -Dsonar.java.binaries=target/classes -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login=8e1bab6b2d917962c6585027caeb9bfec64df21e'
+                sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=manijoshan_java-devops-sample-aipp-boot-camp -Dsonar.organization=sonarqubereport -Dsonar.sources=src/main/java/ -Dsonar.java.binaries=target/classes -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login=8e1bab6b2d917962c6585027caeb9bfec64df21e' -Dsonar.qualitygate.wait=true
             }
         }
     }
