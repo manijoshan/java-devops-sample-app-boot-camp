@@ -9,18 +9,11 @@ pipeline{
    stage('Installing Maven'){
       steps {
           sh 'sudo apt-get update -y && sudo apt-get upgrade -y'
-	  sh 'sudo apt install default-jdk -y'
           sh 'sudo apt-get install -y wget tree unzip maven'
            }
         }
      
-    stage('Compiling and testing') {
-       steps {
-           sh 'mvn clean'
-           sh 'mvn compile'
-           sh 'mvn test'
-       }
-    }
+  
     stage('Build') {
       steps {
         sh 'mvn clean package'
