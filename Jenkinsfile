@@ -12,8 +12,7 @@ pipeline{
 	  sh 'sudo apt install openjdk-11-jdk -y'
          sh 'sudo apt-get install -y wget tree unzip maven'
 	sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip'
-	sh 'sudo rm -rf *'
-	sh 'unzip sonar-scanner-cli-4.2.0.1873-linux.zip'
+	sh 'unzip sonar-scanner-cli-4.2.0.1873-linux.zip -y'
 	sh 'sudo mv sonar-scanner-4.2.0.1873-linux /opt/sonar-scanner'
 	sh 'echo -e "sonar.host.url=http://sonarscan.dev.bhubportal.com \n  sonar.sourceEncoding=UTF-8 \n sonar.qualitygate.wait=true " >> /opt/sonar-scanner/conf/sonar-scanner.properties'
            }
