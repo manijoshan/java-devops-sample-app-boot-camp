@@ -9,7 +9,8 @@ pipeline{
    stage('Installing Maven'){
       steps {
           sh 'sudo apt-get update -y && sudo apt-get upgrade -y'
-          sh 'sudo apt-get install -y wget tree unzip maven'
+	  sh 'sudo apt install openjdk-11-jdk -y'
+         sh 'sudo apt-get install -y wget tree unzip maven'
            }
         }
      
