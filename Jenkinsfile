@@ -3,7 +3,8 @@ pipeline {
 
     stages {
         stage('Install SonarScanner CLI') {
-            steps {
+            steps { 
+                  sh 'mvn clean package'
                 sh 'wget -O sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip'
                 sh 'unzip -o -q sonar-scanner.zip'
                 sh 'sudo rm -r /opt/sonar-scanner'
